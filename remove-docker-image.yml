@@ -16,5 +16,10 @@
     command: docker rmi simple-devops-image
     ignore_errors: yes
 
-   
+  - name: pull docker image from dockerhub
+    command: docker pull docker pull vinothseenu/simple-devops-image:latest
+    ignore_errors: yes
+
+  - name : run docker image
+    command: docker run -d --name simple-devops-container -p 8888:8080 vinothseenu/simple-devops-image:latest 
 
