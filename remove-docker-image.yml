@@ -5,21 +5,21 @@
   
   tasks:
   - name: stop if we have old docker container
-    command: docker stop vinothseenu/simple-devops-image
+    command: sudo docker stop simple-devops-container
     ignore_errors: yes
 
   - name: remove stopped docker container
-    command: docker rm vinothseenu/simple-devops-image
+    command: sudo docker rm simple-devops-container
     ignore_errors: yes
 
   - name: remove current docker image
-    command: docker rmi vinothseenu/simple-devops-image
+    command: sudo docker rmi vinothseenu/simple-devops-image
     ignore_errors: yes
 
   - name: pull docker image from dockerhub
-    command: docker pull docker pull vinothseenu/simple-devops-image:latest
+    command: sudo docker pull docker pull vinothseenu/simple-devops-image:latest
     ignore_errors: yes
 
   - name : run docker image
-    command: docker run -d --name simple-devops-container -p 8888:8080 vinothseenu/simple-devops-image:latest 
+    command: sudo docker run -d --name simple-devops-container -p 8888:8080 vinothseenu/simple-devops-image:latest 
 
