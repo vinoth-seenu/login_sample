@@ -1,0 +1,20 @@
+---
+- hosts: all
+  #ansadmin doesn't need root access to create an image
+  become: true
+  
+  tasks:
+  - name: stop if we have old docker container
+    command: docker stop simple-devops-container
+    ignore_errors: yes
+
+  - name: remove stopped docker container
+    command: docker rm simple-devops-container
+    ignore_errors: yes
+
+  - name: remove current docker image
+    command: docker rmi simple-devops-image
+    ignore_errors: yes
+
+   
+
