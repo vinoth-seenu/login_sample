@@ -5,15 +5,15 @@
   
   tasks:
   - name: stop if we have old docker container
-    command: docker stop simple-devops-container
+    command: docker stop vinothseenu/simple-devops-image:latest
     ignore_errors: yes
 
   - name: remove stopped docker container
-    command: docker rm simple-devops-container
+    command: docker rm vinothseenu/simple-devops-image:latest
     ignore_errors: yes
 
   - name: remove current docker image
-    command: docker rmi simple-devops-image
+    command: docker rmi vinothseenu/simple-devops-image:latest
     ignore_errors: yes
 
   - name: pull docker image from dockerhub
