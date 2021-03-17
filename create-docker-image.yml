@@ -8,8 +8,9 @@
     command: "docker build -t simple-devops-image ." 
     args:
       chdir: /opt/docker/webapp/target/
+
   - name: push docker images
     command: docker push vinothseenu/simple-devops-image
 
-  - name: creating docker image using docker command
-    command: docker run -d --name simple-devops-container -p 8888:8080 simple-devops-image
+#  - name: creating docker image using docker command
+#    command: docker run -d --name simple-devops-container -p 8888:8080 simple-devops-image
