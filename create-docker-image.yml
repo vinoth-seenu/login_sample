@@ -8,6 +8,8 @@
     command: "docker build -t simple-devops-image ." 
     args:
       chdir: /opt/docker/webapp/target/
+  - name: tag the image
+    command: docker tag simple-devops-image vinothseenu/simple-devops-image
 
   - name: push docker images
     command: docker push vinothseenu/simple-devops-image

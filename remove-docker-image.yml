@@ -17,7 +17,7 @@
     ignore_errors: yes
 
   - name: pull docker image from dockerhub
-    command: sudo docker pull docker pull vinothseenu/simple-devops-image:latest
+    command: sudo docker pull vinothseenu/simple-devops-image:latest
     ignore_errors: yes
 
   - name : run docker image
